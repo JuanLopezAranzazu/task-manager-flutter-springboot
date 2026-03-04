@@ -1,6 +1,7 @@
 package com.juanlopezaranzazu.backend.dtos.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,14 +14,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Schema(description = "Standard API response wrapper")
 public class ApiResponse<T> {
 
+    @Schema(description = "Whether the request was successful")
     private boolean success;
 
+    @Schema(description = "Response message")
     private String message;
 
+    @Schema(description = "Response data")
     private T data;
 
+    @Schema(description = "Response timestamp")
     @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
 
