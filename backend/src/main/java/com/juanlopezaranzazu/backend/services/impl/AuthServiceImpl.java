@@ -1,10 +1,10 @@
 package com.juanlopezaranzazu.backend.services.impl;
 
-import com.juanlopezaranzazu.backend.dtos.AuthResponse;
-import com.juanlopezaranzazu.backend.dtos.LoginRequest;
-import com.juanlopezaranzazu.backend.dtos.RefreshTokenRequest;
-import com.juanlopezaranzazu.backend.dtos.RegisterRequest;
-import com.juanlopezaranzazu.backend.dtos.UserResponse;
+import com.juanlopezaranzazu.backend.dtos.request.LoginRequest;
+import com.juanlopezaranzazu.backend.dtos.request.RefreshTokenRequest;
+import com.juanlopezaranzazu.backend.dtos.request.RegisterRequest;
+import com.juanlopezaranzazu.backend.dtos.response.AuthResponse;
+import com.juanlopezaranzazu.backend.dtos.response.UserResponse;
 import com.juanlopezaranzazu.backend.entities.RefreshToken;
 import com.juanlopezaranzazu.backend.entities.User;
 import com.juanlopezaranzazu.backend.exceptions.BadRequestException;

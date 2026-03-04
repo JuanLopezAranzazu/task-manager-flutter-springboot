@@ -1,4 +1,4 @@
-package com.juanlopezaranzazu.backend.dtos;
+package com.juanlopezaranzazu.backend.dtos.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

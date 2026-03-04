@@ -11,7 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.juanlopezaranzazu.backend.dtos.ApiResponse;
+import com.juanlopezaranzazu.backend.dtos.response.ApiResponse;
 
 import java.util.HashMap;
 import java.util.Map;
