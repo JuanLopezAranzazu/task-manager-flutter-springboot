@@ -1,16 +1,21 @@
 # frontend
 
-A new Flutter project.
+Frontend desarrollado con Flutter para la gestión de tareas.
 
-## Getting Started
+## Ejecución
 
-This project is a starting point for a Flutter application.
+Para instalar las dependencias, puedes usar el siguiente comando:
+```bash
+flutter pub get
+```
 
-A few resources to get you started if this is your first Flutter project:
+Para ejecutar el proyecto, puedes usar el siguiente comando:
+```bash
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Para ejecutar los tests, puedes usar el siguiente comando:
+```bash
+flutter test
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
