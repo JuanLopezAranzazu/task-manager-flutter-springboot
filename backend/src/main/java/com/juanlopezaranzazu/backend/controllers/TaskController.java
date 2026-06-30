@@ -2,6 +2,7 @@ package com.juanlopezaranzazu.backend.controllers;
 
 import com.juanlopezaranzazu.backend.dtos.request.CreateTaskRequest;
 import com.juanlopezaranzazu.backend.dtos.request.UpdateTaskRequest;
+import com.juanlopezaranzazu.backend.dtos.request.UpdateTaskStatusRequest;
 import com.juanlopezaranzazu.backend.dtos.response.ApiResponse;
 import com.juanlopezaranzazu.backend.dtos.response.PageResponse;
 import com.juanlopezaranzazu.backend.dtos.response.TaskResponse;
@@ -98,6 +99,21 @@ public class TaskController {
         TaskResponse task = taskService.updateTask(currentUser, id, request);
         return ResponseEntity.ok(ApiResponse.success("Task updated successfully", task));
     }
+
+    @PatchMapping("/{id}/status")
+    @Operation(summary = "Update task status", description = "Updates the status of an existing task")
+    public ResponseEntity<ApiResponse<TaskResponse>> updateTaskStatus(
+                @AuthenticationPrincipal User currentUser,
+                @PathVariable Long id,
+                @RequestBody @Valid UpdateTaskStatusRequest request) {
+
+        TaskResponse task =
+                taskService.updateTaskStatus(currentUser, id, request.getStatus());
+
+        return ResponseEntity.ok(
+                ApiResponse.success("Task status updated successfully", task)
+        );
+}
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete a task", description = "Deletes a task by ID")

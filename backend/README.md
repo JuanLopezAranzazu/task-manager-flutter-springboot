@@ -1,5 +1,7 @@
 # backend
 
+Backend desarrollado con Spring Boot para la gestión de tareas.
+
 ## Ejecución
 
 Para compilar el proyecto, puedes usar el siguiente comando:

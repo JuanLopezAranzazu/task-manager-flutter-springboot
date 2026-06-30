@@ -74,6 +74,18 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     @Transactional
+    public TaskResponse updateTaskStatus(User user, Long taskId, Task.Status status) {
+        Task task = taskRepository.findByIdAndUser(taskId, user)
+                .orElseThrow(() -> new ResourceNotFoundException("Task", taskId));
+
+        task.setStatus(status);
+        Task saved = taskRepository.save(task);
+        log.info("Task status updated with id={} by user={}", saved.getId(), user.getEmail());
+        return TaskResponse.fromTask(saved);
+    }
+
+    @Override
+    @Transactional
     public void deleteTask(User user, Long taskId) {
         Task task = taskRepository.findByIdAndUser(taskId, user)
                 .orElseThrow(() -> new ResourceNotFoundException("Task", taskId));
