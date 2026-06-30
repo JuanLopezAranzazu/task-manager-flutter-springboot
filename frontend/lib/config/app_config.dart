@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppConfig {
-  static const baseUrl = 'http://192.168.1.6:8080/api/v1'; // emulador Android
+  static String get baseUrl =>
+      dotenv.env['API_BASE_URL'] ?? 'http://localhost:8080/api/v1';
   static const accessTokenKey = 'access_token';
   static const refreshTokenKey = 'refresh_token';
 }
