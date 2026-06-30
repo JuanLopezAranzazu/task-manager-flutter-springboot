@@ -1,5 +1,7 @@
 # frontend
 
+Frontend desarrollado con Flutter para la gestión de tareas.
+
 ## Ejecución
 
 Para instalar las dependencias, puedes usar el siguiente comando:
