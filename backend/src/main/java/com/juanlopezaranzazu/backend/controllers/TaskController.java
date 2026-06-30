@@ -102,6 +102,12 @@ public class TaskController {
 
     @PatchMapping("/{id}/status")
     @Operation(summary = "Update task status", description = "Updates the status of an existing task")
+    @ApiResponses(value = {
+                @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "Task status updated successfully"),
+                @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Validation error"),
+                @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "401", description = "Not authenticated"),
+                @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404", description = "Task not found")
+        })
     public ResponseEntity<ApiResponse<TaskResponse>> updateTaskStatus(
                 @AuthenticationPrincipal User currentUser,
                 @PathVariable Long id,
